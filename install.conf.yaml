@@ -1,6 +1,22 @@
+- defaults:
+    link:
+        create: true
+        relink: true
+
 - clean: ['~']
 
-- link:
-    ~/.zshrc: zshrc
+- shell:
+    - sudo apt update && sudo apt install zsh
 
+- create:
+    - ~/projects
+    - ~/downloads
+   
+
+- link:
+    ~/.ssh:        
+    ~/.zshrc:
+        force: true
+- shell:
+   -  chsh -s $(which zsh)
 
